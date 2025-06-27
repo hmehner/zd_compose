@@ -1,0 +1,32 @@
+services:
+  bind:
+    container_name: bind-dns
+    image: internetsystemsconsortium/bind9:9.20
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - "bind-config:/etc/bind"
+      - "bind-zones:/var/lib/bind"
+      - "bind-logs:/var/log"
+    restart: "unless-stopped"
+
+volumes:
+  bind-config:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.0.7,nfsvers=4"
+      device: ":/mnt/store-0/service_storage/zd/bind-dns/config"
+  bind-zones:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.0.7,nfsvers=4"
+      device: ":/mnt/store-0/service_storage/zd/bind-dns/zones"
+  bind-logs:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.0.7,nfsvers=4"
+      device: ":/mnt/store-0/service_storage/zd/bind-dns/logs"
