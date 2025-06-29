@@ -1,7 +1,7 @@
 services:
   caddy:
     build: .
-    env_file: "/home/docker/zd_env/caddy/.env"
+    env_file: "/home/docker/env/caddy/.env"
     volumes:
       - caddy-etc:/etc/caddy
       - caddy-site:/srv
