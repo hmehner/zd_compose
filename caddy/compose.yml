@@ -1,7 +1,6 @@
 services:
   caddy:
     build: .
-    image: homelab/local-caddy:latest
     volumes:
       - caddy-etc:/etc/caddy
       - caddy-site:/srv
