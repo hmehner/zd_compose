@@ -21,22 +21,22 @@ volumes:
     driver_opts:
       type: "nfs"
       o: "addr=192.168.0.7,nfsvers=4"
-      device: ":/mnt/store-0/service_storage/zd/caddy/caddy-etc"
+      device: ":/mnt/store-0/service_storage/zd/caddy/etc"
   caddy-site:
     driver: local
     driver_opts:
       type: "nfs"
       o: "addr=192.168.0.7,nfsvers=4"
-      device: ":/mnt/store-0/service_storage/zd/caddy/caddy-site"
+      device: ":/mnt/store-0/service_storage/zd/caddy/site"
   caddy-data:
     driver: local
     driver_opts:
       type: "nfs"
       o: "addr=192.168.0.7,nfsvers=4"
-      device: ":/mnt/store-0/service_storage/zd/caddy/caddy-data"
+      device: ":/mnt/store-0/service_storage/zd/caddy/data"
   caddy-config:
     driver: local
     driver_opts:
       type: "nfs"
       o: "addr=192.168.0.7,nfsvers=4"
-      device: ":/mnt/store-0/service_storage/zd/caddy/caddy-config"
+      device: ":/mnt/store-0/service_storage/zd/caddy/config"
