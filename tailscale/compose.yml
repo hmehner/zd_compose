@@ -10,6 +10,7 @@ services:
     cap_add: # Required for tailscale to work
       - net_admin
       - sys_module
+    restart: unless-stopped
 
 
 
